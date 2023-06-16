@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - function prints all lower case alphas using putchar
+ * main - prints upper and lower case alpha
  *
  * Return: 0
  */
@@ -9,20 +9,18 @@
 int main(void)
 {
 	char c = 'a';
-        char b = 'A';
+	char b = 'A';
 
 	while (c <= 'z')
 	{
-	putchar(c);
-	c = c + 1;
+		putchar(c);
+		a++;
 	}
-
-        while (b <= 'Z')
+	while (b <= 'Z')
 	{
-	putchar(b);
-        b = b + 1;
+		putchar(b);
+		b++;
 	}
-
 	putchar('\n');
 
 	return (0);
