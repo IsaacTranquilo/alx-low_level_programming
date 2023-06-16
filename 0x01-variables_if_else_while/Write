@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+/**
+ *main - Entry point of the program
+ *
+ *Description: This function generates a random number and checks the size
+ *              of its last digit.
+ *
+ * Return: 0 indicating successful execution
+ */
+int main(void)
+{
+	int letter;
+        
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+		putchar(letter);
+	}
+	putchar('\n');
+
+	return (0);
+}
