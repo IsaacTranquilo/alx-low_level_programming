@@ -1,34 +1,25 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - prints all combinations of single digit numbers
  *
- * Description: Prints all possible combinations of single-digit numbers
- *              separated by ", " in ascending order using putchar function
- *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
+
 int main(void)
 {
-    int i, j;
+	int n;
 
-    for (i = 0; i < 10; i++)
-    {
-        for (j = i; j < 10; j++)
-        {
-            putchar(i + '0');
-            putchar(j + '0');
+	for (n = 48; n < 58; n++)
+	{
+		putchar(n);
+		if (n != 57)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
+	putchar('\n');
 
-            if (i != 9 || j != 9)
-            {
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
-
-    putchar('\n');
-
-    return 0;
+	return (0);
 }
-
