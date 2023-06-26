@@ -11,7 +11,6 @@ char *_strcpy(char *dest, char *src)
 {
 	char *dest_start = dest;
 
-	// Copy each character from src to dest until null character is encountered
 	while (*src != '\0')
 	{
 		*dest = *src;
@@ -19,7 +18,6 @@ char *_strcpy(char *dest, char *src)
 		src++;
 	}
 
-	// Add null character to the end of the copied string
 	*dest = '\0';
 
 	return dest_start;
