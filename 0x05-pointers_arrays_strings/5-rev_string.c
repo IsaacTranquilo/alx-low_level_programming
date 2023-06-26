@@ -10,16 +10,14 @@ void rev_string(char *s)
 	char *start = s;
 	char temp;
 
-	// Calculate the length of the string
 	while (*s != '\0')
 	{
 		length++;
 		s++;
 	}
 
-	s--; // Point to the last character
+	s--;
 
-	// Swap characters from both ends until the middle is reached
 	while (start < s)
 	{
 		temp = *start;
