@@ -23,5 +23,5 @@ char *string_toupper(char *str)
 		i++;  /* Move to the next character */
 	}
 
-	return str;
+	return (str);
 }
