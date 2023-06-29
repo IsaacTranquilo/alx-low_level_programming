@@ -15,22 +15,18 @@ char *rot13(char *str)
 	/* Iterate over each character in the string */
 	for (i = 0; str[i] != '\0'; i++)
 	{
+		/* Find the corresponding index of the character in the normal array */
+		for (j = 0; normal[j] != '\0' && str[i] != normal[j]; j++)
+			;
+
 		/* Check if the current character is an alphabet letter */
-		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+		if (normal[j] != '\0')
 		{
-			/* Iterate over the normal and rot13 arrays to find a match */
-			for (j = 0; normal[j] != '\0'; j++)
-			{
-				/* Check if the current character matches a letter in normal */
-				if (str[i] == normal[j])
-				{
-					/* Replace the character with the corresponding letter in rot13 */
-					str[i] = rot13[j];
-					break;  /* Exit the inner loop */
-				}
-			}
+			/* Replace the character with the corresponding letter in rot13 */
+			str[i] = rot13[j];
 		}
 	}
 
 	return str;
 }
+
