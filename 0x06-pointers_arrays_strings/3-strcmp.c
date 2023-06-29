@@ -18,5 +18,5 @@ int _strcmp(char *s1, char *s2)
 		i++;
 
 	/* Return the difference in characters or 0 if both strings are equal */
-	return s1[i] - s2[i];
+	return (s1[i] - s2[i]);
 }
