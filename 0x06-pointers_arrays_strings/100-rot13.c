@@ -9,23 +9,23 @@
 char *rot13(char *str)
 {
 	int i, j;
-	char *letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *rot13_letters = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	/* Iterate over each character in the string */
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		/* Check if the current character is a letter */
+		/* Check if the current character is an alphabet letter */
 		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
 		{
-			/* Iterate over the letters array to find a match */
-			for (j = 0; letters[j] != '\0'; j++)
+			/* Iterate over the normal and rot13 arrays to find a match */
+			for (j = 0; normal[j] != '\0'; j++)
 			{
-				/* Check if the current character matches a letter */
-				if (str[i] == letters[j])
+				/* Check if the current character matches a letter in normal */
+				if (str[i] == normal[j])
 				{
-					/* Replace the character with the corresponding ROT13 letter */
-					str[i] = rot13_letters[j];
+					/* Replace the character with the corresponding letter in rot13 */
+					str[i] = rot13[j];
 					break;  /* Exit the inner loop */
 				}
 			}
