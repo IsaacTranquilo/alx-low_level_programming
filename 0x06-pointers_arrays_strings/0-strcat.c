@@ -26,5 +26,5 @@ char *_strcat(char *dest, char *src)
 	/* Add the terminating null byte */
 	dest[dest_len + src_len] = '\0';
 
-	return dest;
+	return (dest);
 }
