@@ -38,5 +38,5 @@ char *cap_string(char *str)
 		i++;  /* Move to the next character */
 	}
 
-	return str;
+	return (str);
 }
