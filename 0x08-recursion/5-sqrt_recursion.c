@@ -16,13 +16,16 @@ int _sqrt_recursion(int n)
 	if (n == 0 || n == 1)
 		return (n);
 
+	/* Variable declaration */
+	int root;
+
 	/* Recursive case: Calculate the square root recursively. */
-	int root = _sqrt_recursion(n - 1);
-	
+	root = _sqrt_recursion(n - 1);
+
 	/* Check if the square of the calculated root is equal to the number n. */
 	if ((root * root) == n)
 		return (root);
-	
+
 	/* If not, return the next root value. */
 	return (_sqrt_recursion(n - 1));
 }
