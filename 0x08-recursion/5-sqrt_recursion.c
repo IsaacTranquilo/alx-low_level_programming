@@ -8,6 +8,7 @@
  */
 int _sqrt_recursion(int n)
 {
+    int i;
     /* Base case: If the number is negative, it does not have a natural square root. */
     if (n < 0)
         return -1;
@@ -17,7 +18,6 @@ int _sqrt_recursion(int n)
         return n;
 
     /* Recursive case: Calculate the square root recursively. */
-    int i;
     for (i = 1; i <= n / 2; i++)
     {
         if ((i * i) == n)
