@@ -1,40 +1,28 @@
 #include "main.h"
 
 /**
- * _sqrt_helper - Recursive helper function to find the square root
- * @n: The number to calculate the square root of
- * @start: The starting point for the search
- * @end: The ending point for the search
+ * _sqrt_recursion - Returns the natural square root of a number.
+ * @n: The number for which to find the square root.
  *
- * Return: The square root of n if found, or -1 otherwise
- */
-int _sqrt_helper(int n, int start, int end)
-{
-	if (start > end)
-		return (-1);
-
-	int mid = start + (end - start) / 2;
-	int sqrt = mid * mid;
-
-	if (sqrt == n)
-		return (mid);
-	else if (sqrt < n)
-		return (_sqrt_helper(n, mid + 1, end));
-	else
-		return (_sqrt_helper(n, start, mid - 1));
-}
-
-/**
- * _sqrt_recursion - Returns the natural square root of a number
- * @n: The number to calculate the square root of
- *
- * Return: The natural square root of n,
- *         or -1 if n does not have a natural square root
+ * Return: The natural square root of the number if it exists, otherwise -1.
  */
 int _sqrt_recursion(int n)
 {
+	/* Base case: If the number is negative or 0, it does not have a natural square root. */
 	if (n < 0)
 		return (-1);
 
-	return (_sqrt_helper(n, 0, n));
+	/* Base case: If the number is 0 or 1, the square root is the number itself. */
+	if (n == 0 || n == 1)
+		return (n);
+
+	/* Recursive case: Calculate the square root recursively. */
+	int root = _sqrt_recursion(n - 1);
+	
+	/* Check if the square of the calculated root is equal to the number n. */
+	if ((root * root) == n)
+		return (root);
+	
+	/* If not, return the next root value. */
+	return (_sqrt_recursion(n - 1));
 }
