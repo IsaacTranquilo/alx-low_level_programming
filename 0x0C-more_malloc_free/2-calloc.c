@@ -18,12 +18,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return NULL;
 
 	total_size = nmemb * size;
-
 	ptr = malloc(total_size);
+
 	if (ptr == NULL)
 		return NULL;
 
-	/* Set memory to zero using memset */
+	/* Set memory to zero using the memset function */
 	memset(ptr, 0, total_size);
 
 	return ptr;
