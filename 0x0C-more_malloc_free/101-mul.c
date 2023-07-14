@@ -12,12 +12,12 @@
 int is_valid_number(const char *str)
 {
 	if (*str == '\0')
-		return 0;
+		return (0);
 
 	while (*str)
 	{
 		if (!isdigit(*str))
-			return 0;
+			return (0);
 		str++;
 	}
 
